@@ -81,7 +81,7 @@
             }
 
             .hero-logo {
-                max-width: 520px;
+                max-width: 380px;
                 width: 100%;
                 height: auto;
                 filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
@@ -94,23 +94,23 @@
             }
 
             .hero-title {
-                font-size: clamp(2.6rem, 4vw, 4rem);
+                font-size: clamp(2rem, 2.8vw, 3.1rem);
                 font-weight: 800;
                 background: linear-gradient(to right, #3d5a80, #5a7fa8);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-clip: text;
-                max-width: 1200px;
+                max-width: 1080px;
                 margin-bottom: 1rem;
                 margin-left: auto;
                 margin-right: auto;
-                line-height: 1.1;
+                line-height: 1.16;
             }
 
             .hero-subtitle {
-                font-size: 2rem;
+                font-size: 1.45rem;
                 color: #6a8fb8;
-                margin: 0 auto 2rem;
+                margin: 0 auto 1.6rem;
                 max-width: 900px;
             }
 
@@ -118,11 +118,11 @@
                 background: rgba(255,255,255,0.6);
                 backdrop-filter: blur(10px);
                 border-radius: 16px;
-                padding: 2rem 5rem;
+                padding: 1.4rem 2.4rem;
                 border: 1px solid rgba(255,255,255,0.8);
                 margin-top: 2rem;
                 color: #5a7a9a;
-                font-size: 1.3rem;
+                font-size: 1.05rem;
                 width: fit-content;
                 max-width: 95%;
                 margin-left: auto;
@@ -436,12 +436,12 @@
                 display: inline-flex;
                 align-items: center;
                 gap: 0.5rem;
-                padding: 1.2rem 2.6rem;
+                padding: 0.9rem 2rem;
                 background: white;
                 color: var(--accent-blue);
                 border-radius: 50px;
                 font-weight: 600;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
                 text-decoration: none;
                 transition: var(--transition);
                 box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -476,10 +476,10 @@
             .author-tag {
                 background: rgba(255,255,255,0.6);
                 backdrop-filter: blur(10px);
-                padding: 0.7rem 1.3rem;
+                padding: 0.55rem 1rem;
                 border-radius: 50px;
                 color: #6a8fb8;
-                font-size: 1.35rem;
+                font-size: 1.05rem;
                 transition: var(--transition);
                 border: 1px solid rgba(255,255,255,0.8);
                 white-space: nowrap;
@@ -507,7 +507,7 @@
                 gap: 2rem;
                 margin-top: 1rem;
                 color: #6a8fb8;
-                font-size: 1.5rem;
+                font-size: 1.15rem;
             }
 
             /* Fade In Animation */
@@ -554,31 +554,23 @@
                         
                         <h1 class="hero-title">Toward next-generation of large language models beyond autoregression with diffusion</h1>
                         
-                        <p class="hero-subtitle">
+                        <!-- <p class="hero-subtitle">
                             A new paradigm for large language modeling based on diffusion
-                        </p>
+                        </p> -->
 
                         <!-- Authors -->
                         <div class="authors-grid">
-                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=mVaNdrsAAAAJ" target="_blank">Shen Nie</a><sup>1</sup></span>
-                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=tIYpDBAAAAAJ&hl=en" target="_blank">Fengqi Zhu</a><sup>1</sup></span>
-                            <span class="author-tag"><a href="https://yyyouy.github.io/" target="_blank">Zebin You</a><sup>1</sup></span>
-                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=cAz9PToAAAAJ" target="_blank">Xiaolu Zhang</a><sup>2</sup></span>
-                            <span class="author-tag"><a href="https://jingyangou.github.io/" target="_blank">Jingyang Ou</a><sup>1</sup></span>
-                            <span class="author-tag"><a href="" target="_blank">Jun Hu</a><sup>2</sup></span>
-                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=mCVvloEAAAAJ" target="_blank">Jun Zhou</a><sup>2</sup></span>
-                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=j8K1FqEAAAAJ" target="_blank">Yankai Lin</a><sup>1</sup></span>
-                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=tbxCHJgAAAAJ" target="_blank">Ji-Rong Wen</a><sup>1</sup></span>
                             <span class="author-tag"><a href="https://zhenxuan00.github.io/" target="_blank">Chongxuan Li</a><sup>1</sup></span>
+                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=mVaNdrsAAAAJ" target="_blank">Shen Nie</a><sup>1</sup></span>
+                            <span class="author-tag"><a href="https://scholar.google.com/citations?user=tbxCHJgAAAAJ" target="_blank">Ji-Rong Wen</a><sup>1</sup></span>
                         </div>
 
                         <div class="affiliations">
                             <span><sup>1</sup> Renmin University of China</span>
-                            <span><sup>2</sup> Ant Group</span>
                         </div>
 
                         <!-- Links -->
-                        <div class="links-section">
+                        <!-- <div class="links-section">
                             <a href="http://arxiv.org/abs/2502.09992" target="_blank" class="btn-modern">
                                 <i class="fas fa-file-pdf"></i> Paper
                             </a>
@@ -588,18 +580,7 @@
                             <a href="https://huggingface.co/GSAI-ML" target="_blank" class="btn-modern">
                                 🤗 Model
                             </a>
-                        </div>
-
-
-                        <div class="hero-tldr">
-                            <strong>TL;DR:</strong> We introduce LLaDA, a diffusion model with an unprecedented 8B scale, trained entirely from scratch, rivaling LLaMA3 8B in performance.
-                        </div>
-
-                        <!-- Quote in Hero -->
-                        <div class="hero-quote fade-in" style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(106, 143, 184, 0.2);">
-                            <p class="quote-text" style="font-size: 1.9rem; color: #6a8fb8; font-style: italic; font-family: 'Times New Roman', serif;">What is now proved was once only imagined.</p>
-                            <p class="quote-author" style="color: #6a8fb8; opacity: 0.8; margin-top: 0.5rem; font-size: 1.2rem;">— William Blake</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -609,7 +590,7 @@
         <!-- Case Studies Section -->
         <section class="section-modern" id="Cases">
             <div class="container is-max-desktop">
-                <h2 class="section-title fade-in">Case Studies</h2>
+                <h2 class="section-title fade-in"></h2>
                 <div class="divider"></div>
 
                 <!-- Math Problem -->
@@ -623,76 +604,6 @@
                         <div class="chat-message assistant">
                             <div class="chat-label">LLaDA-Instruct</div>
                             <div class="chat-content">Emma runs 4 sprints each time, so she runs a total of 4 x 5 = 20 sprints a week. Each sprint is 75 meters long, so Emma runs a total of 20 x 75 = 1500 meters a week. The final result is 1500.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Daily Life -->
-                <div class="case-card fade-in">
-                    <div class="case-header">Daily Life</div>
-                    <div class="case-body">
-                        <div class="chat-message user">
-                            <div class="chat-label">User</div>
-                            <div class="chat-content">Please recommend me three famous movies</div>
-                        </div>
-                        <div class="chat-message assistant">
-                            <div class="chat-label">LLaDA-Instruct</div>
-                            <div class="chat-content">Certainly! Here are three famous movies that have achieved widespread popularity and critical acclaim:<br><br>
-                            1. <b>The Shawshank Redemption</b> (1994) - Inspired by a novella and directed by Frank Darabont, this film tells the story of Andy Dufresne, a man convicted of murdering his wife, dealing with his harsh life in Shawshank Prison and forming an unlikely friendship with a fellow inmate.<br><br>
-                            2. <b>The Godfather</b> (1972) - Directed by Francis Ford Coppola, this film is based on Mario Puzo's novel of the same name. It follows the story of the Corleone family, particularly Michael Corleone, who rises to power and takes over the family's criminal empire.<br><br>
-                            3. <b>The Empire Strikes Back</b> (1980) - Directed by George Lucas, this film continues the story of a young Skywalker in the Star Wars saga. It follows Luke Skywalker as he helps the Rebel Alliance fight against the Galactic Empire and destroy the powerful weapon, the Death Star.<br><br>
-                            All of these films are celebrated for their cinematic achievements, powerful storytelling, and memorable characters.</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Translation EN -> CN -->
-                <div class="case-card fade-in">
-                    <div class="case-header">Translation (English → Chinese)</div>
-                    <div class="case-body">
-                        <div class="chat-message user">
-                            <div class="chat-label">User</div>
-                            <div class="chat-content">Please help me translate into Chinese: 'What is now proved was once only imagined'</div>
-                        </div>
-                        <div class="chat-message assistant">
-                            <div class="chat-label">LLaDA-Instruct</div>
-                            <div class="chat-content">现在被证明的曾经只是想象</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Multi-turn Dialogue 1 -->
-                <div class="case-card fade-in">
-                    <div class="case-header">Multi-turn Dialogue</div>
-                    <div class="case-body">
-                        <div class="chat-message user">
-                            <div class="chat-label">User</div>
-                            <div class="chat-content">Could you please share with me what the initial two lines of the renowned poem 'The Road Not Taken'?</div>
-                        </div>
-                        <div class="chat-message assistant">
-                            <div class="chat-label">LLaDA-Instruct</div>
-                            <div class="chat-content">Certainly! The initial two lines of the renowned poem "The Road Not Taken" by Robert Frost are: "Two roads diverged in a yellow wood, And sorry I could not travel both." These lines set the stage for the poem, introducing the idea of a speaker facing a choice between two paths.</div>
-                        </div>
-                        <div class="chat-message user">
-                            <div class="chat-label">User</div>
-                            <div class="chat-content">Please help me translate into Chinese.</div>
-                        </div>
-                        <div class="chat-message assistant">
-                            <div class="chat-label">LLaDA-Instruct</div>
-                            <div class="chat-content">Sure! The first two lines of "The Road Not Taken" by Robert Frost can be translated into Chinese as: "两条路分岔在黄色的树林中，遗憾我不能同时走</div>
-                        </div>
-                        <div class="chat-message user">
-                            <div class="chat-label">User</div>
-                            <div class="chat-content">Please also write a poem about life choices. I require 5 sentences, and the first word of each sentence starts with C as the first letter.</div>
-                        </div>
-                        <div class="chat-message assistant">
-                            <div class="chat-label">LLaDA-Instruct</div>
-                            <div class="chat-content">Certainly! Here's a poem about life choices, with each sentence starting with the letter "C":<br><br>
-                            Choices cascade through life's journey,<br>
-                            Creating connections with each decision,<br>
-                            Careful consideration leads to better paths,<br>
-                            Courageous choices shape our destiny,<br>
-                            Choosing wisely guides us through the years.</div>
                         </div>
                     </div>
                 </div>
