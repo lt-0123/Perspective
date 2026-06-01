@@ -191,6 +191,11 @@
                 color: #3d5a80;
             }
 
+            .paper-section-title {
+                font-size: clamp(2.2rem, 3vw, 3.4rem);
+                line-height: 1.15;
+            }
+
             .section-subtitle {
                 text-align: center;
                 color: #666;
@@ -613,7 +618,7 @@
         <!-- Generation Trajectory Section -->
         <section class="section-modern demo-section" id="Generation">
             <div class="container is-max-desktop">
-                <h2 class="section-title fade-in">Generation Trajectory</h2>
+                <h2 class="section-title paper-section-title fade-in">Generation Trajectory</h2>
                 <div class="divider"></div>
 
                 <div class="trajectory-frame fade-in">
@@ -629,7 +634,7 @@
         <!-- BibTeX Section -->
         <section class="section-modern" style="background: var(--bg-light);">
             <div class="container is-max-desktop">
-                <h2 class="section-title fade-in">Citation</h2>
+                <h2 class="section-title paper-section-title fade-in">Citation</h2>
                 <div class="divider"></div>
                 
                 <div class="bibtex-box fade-in">
@@ -665,6 +670,33 @@
             document.querySelectorAll('.fade-in').forEach(el => {
                 observer.observe(el);
             });
+
+            // Start the trajectory animation when the section enters the viewport.
+            const trajectorySection = document.querySelector('#Generation');
+            const trajectoryIframe = document.querySelector('.trajectory-frame iframe');
+            if (trajectorySection && trajectoryIframe) {
+                const playTrajectory = () => {
+                    trajectoryIframe.contentWindow?.postMessage({ type: 'trajectory-play' }, '*');
+                };
+
+                trajectoryIframe.addEventListener('load', () => {
+                    if (trajectorySection.dataset.inView === 'true') {
+                        playTrajectory();
+                    }
+                });
+
+                const trajectoryObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            trajectorySection.dataset.inView = 'true';
+                            playTrajectory();
+                            trajectoryObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.35 });
+
+                trajectoryObserver.observe(trajectorySection);
+            }
 
             // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {

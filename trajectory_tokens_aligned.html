@@ -294,6 +294,12 @@
       if (timer) play();
     };
 
+    window.addEventListener('message', (event) => {
+      if (event.data && event.data.type === 'trajectory-play') {
+        play();
+      }
+    });
+
     render(0);
   </script>
 </body>
