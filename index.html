@@ -539,6 +539,28 @@
                 flex-wrap: wrap;
                 margin-top: 2rem;
             }
+            .trajectory-frame {
+                width: 100%;
+                height: 760px;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: var(--card-shadow);
+                border: 1px solid rgba(61, 90, 128, 0.12);
+                background: #020617;
+            }
+
+            .trajectory-frame iframe {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                display: block;
+            }
+
+            @media (max-width: 768px) {
+                .trajectory-frame {
+                    height: 680px;
+                }
+            }
         </style>
     </head>
 
@@ -587,7 +609,22 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Generation Trajectory Section -->
+        <section class="section-modern demo-section" id="Generation">
+            <div class="container is-max-desktop">
+                <h2 class="section-title fade-in">Generation Trajectory</h2>
+                <div class="divider"></div>
 
+                <div class="trajectory-frame fade-in">
+                    <iframe
+                        src="trajectory_tokens_aligned.html"
+                        title="Diffusion and autoregressive generation trajectory"
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
 
         <!-- Case Studies Section -->
         <section class="section-modern" id="Cases">
