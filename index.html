@@ -9,7 +9,7 @@
         <meta property="og:image" content="static/images/LLaDA_logo.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta name="twitter:title" content="LLaDA - Large Language Diffusion Models" />
+        <meta name="twitter:title" content="Toward next-generation of large language models beyond autoregression with diffusion" />
         <meta name="twitter:description" content="LLaDA is a diffusion model with an unprecedented 8B scale, rivaling LLaMA3 8B in performance." />
         <meta name="twitter:image" content="static/images/LLaDA_logo.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -550,7 +550,7 @@
                             <img src="static/images/LLaDA_logo_yulan.png" alt="LLaDA Logo" class="hero-logo" />
                         </a>
                         
-                        <h1 class="hero-title">Large Language Diffusion Models</h1>
+                        <h1 class="hero-title">Toward next-generation of large language models beyond autoregression with diffusion</h1>
                         
                         <p class="hero-subtitle">
                             A new paradigm for large language modeling based on diffusion
@@ -588,15 +588,6 @@
                             </a>
                         </div>
 
-                        <!-- Comparison Charts -->
-                        <div class="hero-charts fade-in" style="margin-top: 2rem; display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap;">
-                            <div style="background: rgba(255,255,255,0.25); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.4); width: 760px; min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: visible;">
-                                <img src="static/images/LLaDA_vs_LLaMA.svg" alt="LLaDA vs LLaMA" style="width: 540px; height: auto; display: block;" />
-                            </div>
-                            <div style="background: rgba(255,255,255,0.25); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255,255,255,0.4); width: 760px; min-height: 500px; display: flex; align-items: center; justify-content: center; overflow: visible;">
-                                <img src="static/images/LLaDA_vs_LLaMA_chat.svg" alt="LLaDA vs LLaMA Chat" style="width: 570px; height: auto; display: block;" />
-                            </div>
-                        </div>
 
                         <div class="hero-tldr">
                             <strong>TL;DR:</strong> We introduce LLaDA, a diffusion model with an unprecedented 8B scale, trained entirely from scratch, rivaling LLaMA3 8B in performance.
@@ -612,91 +603,6 @@
             </div>
         </section>
 
-
-
-
-
-        <!-- Motivation Section -->
-        <section class="section-modern" style="background: var(--bg-light);">
-            <div class="container is-max-desktop">
-                <h2 class="section-title fade-in">Motivation</h2>
-                <div class="divider"></div>
-                
-                <p style="font-size: 2.1rem; font-family: 'Times New Roman', Times, serif; line-height: 1.8; margin-bottom: 1.5rem; margin-top: 2rem; text-align: justify; hyphens: auto;">
-                    We contend that the intelligence of LLMs—manifested in <i>scalability</i>, <i>instruction-following</i>, <i>in-context learning</i>, <i>conversational ability</i>, and <i>compression—stems</i> not from the autoregressive mechanism per se, but rather from the core principle of generative modeling: approximating the true language distribution through maximum likelihood estimation.
-                </p>
-                <p style="font-size: 2.1rem; font-family: 'Times New Roman', Times, serif; line-height: 1.8; text-align: justify; hyphens: auto;">
-                    We introduce <b>LLaDA</b> (<b>L</b>arge <b>La</b>nguage <b>D</b>iffusion with m<b>A</b>sking), a simple yet principled generative paradigm for large language models that demonstrates the aforementioned remarkable capabilities.
-                </p>
-            </div>
-        </section>
-
-        <!-- Method Section -->
-        <section class="section-modern method-section" id="Method">
-            <div class="container is-max-desktop">
-                <h2 class="section-title fade-in">Method</h2>
-                <div class="divider"></div>
-
-                <div class="image-card fade-in" style="margin-bottom: 3rem; margin-top: 2rem;">
-                    <img src="static/images/method.svg" alt="Method" />
-                </div>
-
-                <p style="font-size: 1.9rem; font-family: 'Times New Roman', Times, serif; line-height: 1.8; text-align: justify; hyphens: auto;">
-                    LLaDA is a masked diffusion model [1, 2, 3] that follows standard pretraining and SFT while sampling via diffusion. During pretraining, it masks all tokens randomly at ratio \( t \sim U[0,1] \); in SFT, only response tokens may be masked. The model simulates diffusion from full masking (\(t = 1\)) to unmasking (\(t = 0\)), predicting all masks simultaneously at each step with flexible remasking.
-                </p>
-            </div>
-        </section>
-
-        <!-- Scalability Section -->
-        <section class="section-modern" style="background: var(--bg-light);">
-            <div class="container is-max-desktop">
-                <h2 class="section-title fade-in">Scalability</h2>
-                <div class="divider"></div>
-                <p style="font-size: 1.9rem; font-family: 'Times New Roman', Times, serif; line-height: 1.8; margin-bottom: 1.5rem; text-align: justify; hyphens: auto;">
-                    LLaDA demonstrates impressive scalability, with its overall trend being highly competitive with that of autoregressive baseline on the same data.
-                </p>
-
-                <div class="chart-grid">
-                    <div class="image-card fade-in">
-                        <img src="static/images/scaling_mmlu.svg" alt="MMLU Scaling" />
-                    </div>
-                    <div class="image-card fade-in">
-                        <img src="static/images/scaling_arc_c.svg" alt="ARC-C Scaling" />
-                    </div>
-                    <div class="image-card fade-in">
-                        <img src="static/images/scaling_cmmlu.svg" alt="CMMLU Scaling" />
-                    </div>
-                    <div class="image-card fade-in">
-                        <img src="static/images/scaling_piqa.svg" alt="PIQA Scaling" />
-                    </div>
-                    <div class="image-card fade-in">
-                        <img src="static/images/scaling_gsm8k.svg" alt="GSM8K Scaling" />
-                    </div>
-                    <div class="image-card fade-in">
-                        <img src="static/images/scaling_humaneval.svg" alt="HumanEval Scaling" />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sampling Process Section -->
-        <section class="section-modern" id="Sampling">
-            <div class="container is-max-desktop">
-                <h2 class="section-title fade-in">Sampling Process</h2>
-                <div class="divider"></div>
-                <p style="font-size: 1.9rem; font-family: 'Times New Roman', Times, serif; line-height: 1.8; margin-bottom: 1.5rem; text-align: center; hyphens: auto;">
-                    A text generation method different from traditional left-to-right approach.
-                </p>
-
-                <p style="text-align: center; color: #666; font-size: 1.65rem; margin-bottom: 2rem;">
-                    <i>Prompt: "Explain what artificial intelligence is."</i>
-                </p>
-
-                <div class="image-card fade-in">
-                    <img src="static/images/diff_normal_150ms.gif" alt="Diffusion Sampling" style="width: 100%; height: auto;" />
-                </div>
-            </div>
-        </section>
 
         <!-- Case Studies Section -->
         <section class="section-modern" id="Cases">
