@@ -419,21 +419,47 @@
             .bibtex-box {
                 background: white;
                 border-radius: 16px;
-                padding: 2.2rem;
+                padding: 1.6rem;
                 border: 1px solid rgba(61, 90, 128, 0.1);
                 box-shadow: var(--card-shadow);
+                position: relative;
             }
 
             .bibtex-box pre {
+                background: #f8fbfd;
+                border: 1px solid rgba(61, 90, 128, 0.08);
+                border-radius: 12px;
                 color: #333;
                 font-family: 'Fira Code', monospace;
-                font-size: 1.4rem;
+                font-size: 0.95rem;
+                line-height: 1.55;
                 overflow-x: auto;
                 margin: 0;
+                padding: 1.4rem;
             }
 
             .bibtex-box code {
                 color: #3d5a80;
+            }
+
+            .copy-bibtex {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                border: 1px solid rgba(61, 90, 128, 0.16);
+                background: rgba(255, 255, 255, 0.9);
+                color: #3d5a80;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 0.9rem;
+                font-weight: 600;
+                padding: 0.45rem 0.8rem;
+                transition: var(--transition);
+            }
+
+            .copy-bibtex:hover {
+                box-shadow: 0 6px 18px rgba(61, 90, 128, 0.12);
+                transform: translateY(-1px);
             }
 
             /* Buttons */
@@ -664,7 +690,8 @@
                 <div class="divider"></div>
                 
                 <div class="bibtex-box fade-in">
-                    <pre><code>@article{li2026towardnextgeneration,
+                    <button class="copy-bibtex" type="button" data-copy-target="bibtex-code">Copy</button>
+                    <pre><code id="bibtex-code">@article{li2026towardnextgeneration,
   title={Toward next-generation of large language models beyond autoregression with diffusion},
   author={Li, Chongxuan and Lan, Tian and Nie, Shen and Sun, Hao and Wen, Ji-Rong},
   journal={arXiv preprint},
@@ -695,6 +722,34 @@
 
             document.querySelectorAll('.fade-in').forEach(el => {
                 observer.observe(el);
+            });
+
+            document.querySelectorAll('.copy-bibtex').forEach(button => {
+                button.addEventListener('click', async () => {
+                    const target = document.getElementById(button.dataset.copyTarget);
+                    if (!target) return;
+
+                    const text = target.textContent.trim();
+                    try {
+                        await navigator.clipboard.writeText(text);
+                    } catch (error) {
+                        const textarea = document.createElement('textarea');
+                        textarea.value = text;
+                        textarea.setAttribute('readonly', '');
+                        textarea.style.position = 'fixed';
+                        textarea.style.opacity = '0';
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textarea);
+                    }
+
+                    const originalText = button.textContent;
+                    button.textContent = 'Copied';
+                    window.setTimeout(() => {
+                        button.textContent = originalText;
+                    }, 1600);
+                });
             });
 
             // Start the trajectory animation when the section enters the viewport.
