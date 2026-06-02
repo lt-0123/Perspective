@@ -554,6 +554,24 @@
                 background: #020617;
             }
 
+            .prompt-box {
+                background: rgba(255,255,255,0.72);
+                border: 1px solid rgba(61, 90, 128, 0.14);
+                border-radius: 14px;
+                box-shadow: 0 8px 28px rgba(61, 90, 128, 0.08);
+                color: #3d5a80;
+                font-size: 1.15rem;
+                line-height: 1.6;
+                margin: 0 auto 1.5rem;
+                max-width: 980px;
+                padding: 1.1rem 1.4rem;
+            }
+
+            .prompt-box strong {
+                color: #2d4668;
+                font-weight: 700;
+            }
+
             .trajectory-frame iframe {
                 width: 100%;
                 height: 100%;
@@ -564,6 +582,10 @@
             @media (max-width: 768px) {
                 .trajectory-frame {
                     height: 680px;
+                }
+                .prompt-box {
+                    font-size: 1rem;
+                    padding: 1rem;
                 }
             }
         </style>
@@ -620,6 +642,10 @@
             <div class="container is-max-desktop">
                 <h2 class="section-title paper-section-title fade-in">Generation Trajectory</h2>
                 <div class="divider"></div>
+
+                <div class="prompt-box fade-in">
+                    <strong>Prompt:</strong> Give me a short introduction to large language models.
+                </div>
 
                 <div class="trajectory-frame fade-in">
                     <iframe

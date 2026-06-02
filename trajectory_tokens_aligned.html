@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LLaDA vs AR Token Timeline (Generated Tokens Only)</title>
+  <title>dLLMs vs. ARMs Generated Token Timeline</title>
   <style>
     :root {
       --panel: #0f172a;
@@ -172,12 +172,12 @@
 <body>
   <div class="container">
     <div class="card">
-      <h1>LLaDA vs AR Token Timeline (Generated Tokens Only)</h1>
+      <h1>dLLMs vs. ARMs Generated Token Timeline</h1>
       <div class="controls">
         <button id="playBtn" class="btn">Play</button>
         <button id="pauseBtn" class="btn">Pause</button>
-        <button id="prevBtn" class="btn">Prev</button>
-        <button id="nextBtn" class="btn">Next</button>
+        <button id="prevBtn" class="btn">Previous Frame</button>
+        <button id="nextBtn" class="btn">Next Frame</button>
         <input id="frameSlider" type="range" min="0" value="0" />
         <span style="color:#94a3b8;font-size:13px;">Speed</span>
         <input id="speedSlider" type="range" min="1" max="20" value="8" />
@@ -198,11 +198,11 @@
 
     <div class="grid">
       <div class="card">
-        <div class="pane-title">Left: Diffusion</div>
+        <div class="pane-title">Left: dLLMs (LLaDA-2.0-Mini)</div>
         <div id="leftTokenLine" class="token-line"></div>
       </div>
       <div class="card">
-        <div class="pane-title">Right: AR </div>
+        <div class="pane-title">Right: ARM </div>
         <div id="rightTokenLine" class="token-line"></div>
       </div>
     </div>
