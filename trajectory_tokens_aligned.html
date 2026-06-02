@@ -180,8 +180,8 @@
       <div class="controls">
         <button id="playBtn" class="btn">Play</button>
         <button id="pauseBtn" class="btn">Pause</button>
-        <button id="prevBtn" class="btn">Previous Frame</button>
-        <button id="nextBtn" class="btn">Next Frame</button>
+        <button id="prevBtn" class="btn">Previous</button>
+        <button id="nextBtn" class="btn">Next</button>
         <input id="frameSlider" type="range" min="0" value="0" />
         <span style="color:var(--muted);font-size:13px;">Playback Speed</span>
         <input id="speedSlider" type="range" min="1" max="20" value="8" />
@@ -191,12 +191,12 @@
       <div class="info" id="infoBox"></div>
 
       <div class="legend">
-        <span><i style="background:var(--decode-bg-bright)"></i>Decode new</span>
-        <span><i style="background:var(--decode-bg-dark)"></i>Decode old</span>
-        <span><i style="background:var(--refine-bg-bright)"></i>Refine new</span>
-        <span><i style="background:var(--refine-bg-dark)"></i>Refine old</span>
-        <span><i style="background:var(--ar-bg-bright)"></i>AR new</span>
-        <span><i style="background:var(--ar-bg-dark)"></i>AR old</span>
+        <span><i style="background:var(--decode-bg-bright)"></i>New dLLM Decode</span>
+        <span><i style="background:var(--decode-bg-dark)"></i>Previous dLLM Decode</span>
+        <span><i style="background:var(--refine-bg-bright)"></i>New dLLM Refinement</span>
+        <span><i style="background:var(--refine-bg-dark)"></i>Previous dLLM Refinement</span>
+        <span><i style="background:var(--ar-bg-bright)"></i>New ARM Token</span>
+        <span><i style="background:var(--ar-bg-dark)"></i>Previous ARM Tokens</span>
       </div>
     </div>
 
@@ -261,13 +261,13 @@
       rightTokenLine.innerHTML = rightSpans.join('');
 
       infoBox.innerHTML = `
-        <div class="item"><b>frame</b><br>${curFrame}</div>
-        <div class="item"><b>window / step</b><br>${left.window} / ${left.step}</div>
-        <div class="item"><b>decode_count</b><br>${left.decode_count}</div>
-        <div class="item"><b>refine_count</b><br>${left.refine_count}</div>
-        <div class="item"><b>mask_remaining</b><br>${left.mask_remaining}</div>
-        <div class="item"><b>AR progress</b><br>${visible} / ${arTokens.length}</div>
-        <div class="item"><b>generated_start_pos</b><br>${payload.generated_start}</div>
+        <div class="item"><b>Frame</b><br>${curFrame}</div>
+        <div class="item"><b>Window / Step</b><br>${left.window} / ${left.step}</div>
+        <div class="item"><b>Decoded Tokens</b><br>${left.decode_count}</div>
+        <div class="item"><b>Refined Tokens</b><br>${left.refine_count}</div>
+        <div class="item"><b>Masks Left</b><br>${left.mask_remaining}</div>
+        <div class="item"><b>ARM Progress</b><br>${visible} / ${arTokens.length}</div>
+        <div class="item"><b>Prompt Start</b><br>${payload.generated_start}</div>
       `;
     }
 
